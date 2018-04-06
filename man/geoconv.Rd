@@ -14,11 +14,14 @@ geoconv(lat, lon, key = NULL)
 \item{key}{Baidu map API application key}
 }
 \value{
-Baidu standard geocode (latitude, longitude) \emph{# Take note of the order}
+Baidu standard geocode (latitude, longitude) \emph{# take note of the order}
 }
 \description{
 Convert non-Baidu standard geocode to Baidu standard geocode
 }
 \examples{
-geoconv("114.21892734521", "29.575429778924")
+\dontrun{
+geoconv("114.21892734521", "29.575429778924", key = "Your_Api_Key_Here")
+}
+
 }

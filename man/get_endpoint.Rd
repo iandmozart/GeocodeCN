@@ -6,6 +6,12 @@
 \usage{
 get_endpoint(api)
 }
+\arguments{
+\item{api}{string, which api to use?}
+}
+\value{
+string, endpoint of api
+}
 \description{
 Provide API endpoints
 }

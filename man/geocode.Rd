@@ -16,13 +16,20 @@ geocode(address, api = "amap", key = NULL, output = "json")
 \item{output}{specify output type, JSON or XML}
 }
 \value{
-Geocode of address (latitude, longitude)  \emph{# Take note of the order}
+Geocode of address (latitude, longitude)  \emph{# take note of the order}
 }
 \description{
 Geocode a particular address.
 }
 \examples{
-geocode("北京市朝阳区朝阳首府")
-geocode("北京市朝阳区朝阳首府", api = "baidu", output = "xml")
-geocode("北京市朝阳区朝阳首府", api = "amap", key = getOption("amap_key"))
+\dontrun{
+geocode("北京市朝阳区朝阳首府", api = "amap", key = "Your_Api_Key_Here")
+
+# set application key via environment variables
+file.edit("~/.Renviron")
+# restart R to take effect
+amap_ak <- Sys.getenv("amap_ak")
+geocode("北京市朝阳区朝阳首府", key = amap_ak, output = "xml")
+}
+
 }

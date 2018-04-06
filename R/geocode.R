@@ -5,7 +5,8 @@ library(jsonlite)
 # APIs Endpoints ----------------------------------------------------------
 
 #' Provide API endpoints
-#'
+#' @param api string, which api to use?
+#' @return string, endpoint of api
 get_endpoint <- function(api){
 
     ep <- list(
@@ -18,6 +19,7 @@ get_endpoint <- function(api){
     ep[[api]]
 }
 
+
 # Geocoding ----------------------------------------------------------------
 
 #' Geocode address
@@ -29,11 +31,20 @@ get_endpoint <- function(api){
 #' @param key API application key
 #' @param output specify output type, JSON or XML
 #' @return
-#' Geocode of address (latitude, longitude)  \emph{# Take note of the order}
+#' Geocode of address (latitude, longitude)  \emph{# take note of the order}
 #' @examples
-#' geocode("北京市朝阳区朝阳首府")
-#' geocode("北京市朝阳区朝阳首府", api = "baidu", output = "xml")
-#' geocode("北京市朝阳区朝阳首府", api = "amap", key = getOption("amap_key"))
+#' \dontrun{
+#' geocode("北京市朝阳区朝阳首府", api = "amap", key = "Your_Api_Key_Here")
+#'
+#' # set application key via environment variables
+#' file.edit("~/.Renviron")
+#' # restart R to take effect
+#' amap_ak <- Sys.getenv("amap_ak")
+#' geocode("北京市朝阳区朝阳首府", key = amap_ak, output = "xml")
+#' }
+#'
+#' @importFrom magrittr %>%
+#' @export
 geocode <- function(address, api = "amap", key = NULL, output = "json"){
 
     # Make standard
@@ -75,9 +86,14 @@ geocode <- function(address, api = "amap", key = NULL, output = "json"){
 #' @param lon geocode longitude, string or numeric
 #' @param key Baidu map API application key
 #' @return
-#' Baidu standard geocode (latitude, longitude) \emph{# Take note of the order}
+#' Baidu standard geocode (latitude, longitude) \emph{# take note of the order}
 #' @examples
-#' geoconv("114.21892734521", "29.575429778924")
+#' \dontrun{
+#' geoconv("114.21892734521", "29.575429778924", key = "Your_Api_Key_Here")
+#' }
+#'
+#' @importFrom magrittr %>%
+#' @export
 geoconv <- function(lat, lon, key = NULL){
 
     # Make sure Baidu key exists
