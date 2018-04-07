@@ -11,6 +11,13 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 
 ``GeocodeCN`` is a simple wrapper around common APIs for geocoding Chinese location. Currently supports [Amap]("http://lbs.amap.com/") and [Baidu Map]("http://lbsyun.baidu.com/").
 
+## Installation
+
+```{r}
+devtools::install_github("tmasjc/GeocodeCN")
+```
+
+
 ## Geocoding
 
 ```{r}

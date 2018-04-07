@@ -5,6 +5,13 @@ GeocodeCN
 
 `GeocodeCN` is a simple wrapper around common APIs for geocoding Chinese location. Currently supports [Amap](%22http://lbs.amap.com/%22) and [Baidu Map](%22http://lbsyun.baidu.com/%22).
 
+Installation
+------------
+
+``` r
+devtools::install_github("tmasjc/GeocodeCN")
+```
+
 Geocoding
 ---------
 
