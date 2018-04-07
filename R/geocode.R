@@ -1,7 +1,3 @@
-library(assertthat)
-library(magrittr)
-library(jsonlite)
-
 # APIs Endpoints ----------------------------------------------------------
 
 #' Provide API endpoints
