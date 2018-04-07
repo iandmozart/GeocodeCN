@@ -9,7 +9,9 @@ Description: Wrapper for various Chinese geocoding APIs.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: jsonlite,
+Imports: 
+    curl,
+    jsonlite,
     magrittr
 RoxygenNote: 6.0.1
 Suggests: testthat
